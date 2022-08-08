@@ -23,13 +23,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "budgets": [
+              "btudgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5a7d128f-ee76-44b4-b060-9be733757385"
   }
 }
