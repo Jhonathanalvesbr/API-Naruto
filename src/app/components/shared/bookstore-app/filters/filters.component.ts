@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class FiltersComponent implements OnInit {
   
   busca = "";
+
+  @Output() eventoBusca: EventEmitter<any> = new EventEmitter<any>();
   
   constructor() { }
 
@@ -16,6 +18,7 @@ export class FiltersComponent implements OnInit {
 
   atualizar(text: any){
     this.busca = text;
-    console.log(text);
+    this.eventoBusca.emit(text);
   }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-bookstore-app',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookstoreAppComponent implements OnInit {
 
+
+  @Input() textoBusca: any;
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  recebeBusca(text: any){
+    this.textoBusca = text;
   }
 
 }
