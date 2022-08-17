@@ -43,7 +43,7 @@ export class ProductListComponent implements OnInit {
       }
     }
     else if(typeof(this.filtroBusca) == 'string' && this.filtroBusca.length > 0){
-      this.personagem = this.personagem.filter((p: any) => p.name.includes(this.filtroBusca));
+      this.personagem = this.personagem.filter((p: any) => p.name.toLowerCase().includes(this.filtroBusca.toLowerCase()));
     }
   }
 
