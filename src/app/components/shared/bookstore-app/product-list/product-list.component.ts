@@ -13,12 +13,15 @@ export class ProductListComponent implements OnInit {
   personagemCopia: any;
 
   @Input() filtroBusca: string = "";
+  @Input() novo: string = "0";
 
   constructor(personagemService: BooksService) {
     this.personagemService = personagemService;
+    this.buscarAPI();
   }
 
-  ngOnInit(): void {
+
+  buscarAPI(): void{
     this.personagem = [];
     this.personagemCopia = [];
     for (let index = 0; index < 12; index++) {
@@ -33,6 +36,9 @@ export class ProductListComponent implements OnInit {
         this.personagemCopia.push(livros);
       })
     }
+  }
+  
+  ngOnInit(): void {
     
   }
   
@@ -43,8 +49,15 @@ export class ProductListComponent implements OnInit {
       }
     }
     else if(typeof(this.filtroBusca) == 'string' && this.filtroBusca.length > 0){
+      for (let index = 0; index < this.personagemCopia.length; index++) {
+        this.personagem[index] = this.personagemCopia[index];
+      }
       this.personagem = this.personagem.filter((p: any) => p.name.toLowerCase().includes(this.filtroBusca.toLowerCase()));
     }
+    if(this.novo != "0"){
+      this.buscarAPI();
+    }
+    this.novo = "0";
   }
 
 }

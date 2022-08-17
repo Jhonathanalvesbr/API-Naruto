@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, NavigationEnd,ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
   }
 
+  novos(): void{
+    location.reload();
+  }
 }

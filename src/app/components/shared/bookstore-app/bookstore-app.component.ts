@@ -20,4 +20,6 @@ export class BookstoreAppComponent implements OnInit {
     this.textoBusca = text;
   }
 
+
+
 }
